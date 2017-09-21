@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/hammer.js"></script>
+		<style type="text/css">
+			body{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: 100%;
+				height: 300px;
+				margin: 0;
+				padding: 0;
+				
+			}
+			.box ul{
+				width: 400%;
+				height: 100%;
+				list-style: none;
+				margin: 0;\;
+				padding: 0;
+				display: flex;
+				overflow: hidden;
+				transition: all 800ms;
+			}
+			li{
+				width: 100%;
+				height: 100%;
+				
+			}
+			.box li:nth-child(1){
+				background: goldenrod;
+			}
+			.box li:nth-child(2){
+				background: blueviolet;
+			}
+			.box li:nth-child(3){
+				background: blue;
+			}
+			.box li:nth-child(4){
+				background: red;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="box" id="box">
+			<ul>
+				<li>111</li>
+				<li>222</li>
+				<li>333</li>
+				<li>444</li>
+			</ul>
+		</div>
+		
+		
+		<script type="text/javascript">
+			
+			var n = 0;
+			var list = document.getElementById("box");
+			var lis = document.getElementsByTagName("li");
+			
+			var hins = new Hammer(list);
+			   flag = true;
+			
+			hins.on('panleft',function(){
+				if(fage){
+					n++;
+					if(n>lis.length){
+						n = lis.length-1;
+					}
+					list.style.webkitTransform="translate3d(-"+n*25+",0,0)";
+					fage=false;
+				}
+			})
+			
+			hins.on('panright',function(){
+				if(fage){
+					n--;
+					if(n>0){
+						n=0;
+					}
+					list.style.webkitTransform="translate3d(-"+n*25+",0,0)";
+					fage=false;
+				}
+			})
+			
+			list.addEventListener("tuochend",function(ev){
+				flag=ture;
+			})
+			
+			
+			
+			
+		</script>
+		
+		
+		
+	</body>
+</html>

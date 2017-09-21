@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+        <style type="text/css">
+        	body{
+        		padding: 0;
+        		margin: 0;
+        	}
+        	.box{
+        		width: 100%;
+        		height: 400px;
+        		margin: 0;
+        		padding: 0;
+        	}
+        	.box ul{
+        		margin: 0;
+        		padding: 0;
+        		list-style: none;
+        		width: 100%;
+        		height: 100%;
+        		position: relative;
+        	}
+        	.box ul li{
+        		width: 100%;
+        		height:100%;
+        		position: absolute;
+        	}
+        	
+        	
+        	.box li:nth-child(1){
+        		background: blue;
+        	}
+        	.box li:nth-child(2){
+        		background: blueviolet;
+        	}
+        	.box li:nth-child(3){
+        		background: brown;
+        	}
+        	.box li:nth-child(4){
+        		background: bisque;
+        	}
+        	
+        	
+        	
+        </style>		
+		
+		
+	</head>
+	<body>
+		<div class="box" id="box">
+			<ul id="list">
+				<li>1111</li>
+				<li>2222</li>
+				<li>3333</li>
+				<li>4444</li>
+			</ul>
+		</div>
+		
+		<script type="text/javascript">
+			var n =0;
+			var list=document.getElementById("list");
+			var lis = document.getElementsByTagName("li");
+			
+			var w = parseInt(getstyle(lis[0],'width')); // 获取li标签的width
+			list.addEventListener("touchstart",function(ev){
+				ev.preventDefault();
+				var ex = ev.changedTouches[0].pageX;
+			})
+			
+			
+			
+			
+		</script>
+		
+		
+		
+	</body>
+</html>
